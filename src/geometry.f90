@@ -13809,9 +13809,9 @@ subroutine parallelogram_point_dist_3d ( p1, p2, p3, p, dist )
 
   pn(1:dim_num) = p(1:dim_num) - pp(1:dim_num) * t
 !
-!  If P lies WITHIN the parallelogram, we're done.
+!  If Pn lies WITHIN the parallelogram, we're done.
 !
-  inside = parallelogram_contains_point_3d ( p1, p2, p3, p )
+  inside = parallelogram_contains_point_3d ( p1, p2, p3, pn )
 
   if ( inside ) then
     dist = sqrt ( sum ( ( pn(1:dim_num) - p(1:dim_num) ) ** 2 ) )
